@@ -1,9 +1,11 @@
 Simple http/https for web dev. No support for http/2 and websocket.
 
 # CLI
+
 If installed with `npm install nxy -g` it can be used as a global command for proxy.
 
 ## Options
+
 -p --port: proxy port. Default to 8080
 
 -v --verbose: verbose log
@@ -21,15 +23,17 @@ If installed with `npm install nxy -g` it can be used as a global command for pr
 --clear-cache: clear cache files on start up
 
 -r --rule: rule string to apply:
-* delay|/test.js|5000
-* content|/test.js|test content
-* file|/test.js|/test.mock.js
-* forward|/test.js|https://www.google.com
-* cache|/test.js|3600
+
+- delay|(www\.bing\.com\\/\$)|5000
+- content|/test.js|test content
+- file|/test.js|/test.mock.js
+- forward|/test.js|https://www.google.com
+- cache|test/\*.js|3600
 
 --rule-file: the file location which contains the list of rules. Rule syntax is the same as above.
 
 # Module
+
 npm install nxy
 
 ```
@@ -70,4 +74,3 @@ xy.cache('www.github.com', 3600);
 ```
 xy.start();
 ```
-

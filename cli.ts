@@ -62,7 +62,7 @@ const proxy = new SimpleProxy({
 
 rules.forEach((r: string) => {
   const [rule, path, args] = r.split("|");
-  const reg = /^\/(.*?)\/$/.exec(path) || [];
+  const reg = /^\((.*?)\)$/.exec(path) || [];
   const url = reg[1] ? new RegExp(reg[1]) : path;
   if (!(rule in proxy)) {
     console.log(chalk.red(`Rule [${rule}] not supported!`));

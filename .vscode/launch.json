@@ -10,7 +10,8 @@
       "name": "Launch Program",
       "program": "${workspaceFolder}/cli.ts",
       "preLaunchTask": "tsc: build - tsconfig.json",
-      "outFiles": ["${workspaceFolder}/build/**/*.js"]
+      "outFiles": ["${workspaceFolder}/build/**/*.js"],
+      "args": ["-v", "-r", "delay|(www\\.bing\\.com\\/$)|5000"]
     }
   ]
 }
