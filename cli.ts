@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 import fs from "fs";
 import SimpleProxy from "./proxy";
 import command from "command-line-args";

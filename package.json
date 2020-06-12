@@ -2,8 +2,10 @@
   "name": "nxy",
   "version": "0.999.0",
   "description": "Proxy for web dev",
-  "main": "proxy.js",
-  "bin": "cli.js",
+  "main": "build/proxy.js",
+  "bin": {
+    "nxy": "build/cli.js"
+  },
   "scripts": {
     "build": "tsc",
     "start": "ts-node-dev --respawn --transpileOnly cli.ts"
