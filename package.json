@@ -3,6 +3,7 @@
   "version": "0.999.0",
   "description": "Proxy for web dev",
   "main": "build/proxy.js",
+  "types": "build/proxy.d.ts",
   "bin": {
     "nxy": "build/cli.js"
   },
@@ -10,6 +11,9 @@
     "build": "tsc",
     "start": "ts-node-dev --respawn --transpileOnly cli.ts"
   },
+  "files": [
+    "build/**/*"
+  ],
   "keywords": [
     "web",
     "proxy",
@@ -19,6 +23,11 @@
   ],
   "author": "Json Pi",
   "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/withinoneyear/nxy.git"
+  },
+  "homepage": "https://github.com/withinoneyear/nxy#readme",
   "dependencies": {
     "chalk": "^4.1.0",
     "command-line-args": "^5.1.1",
