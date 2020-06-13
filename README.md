@@ -74,3 +74,9 @@ xy.cache('www.github.com', 3600);
 ```
 xy.start();
 ```
+
+# HTTPS
+
+To support https proxy, a self-signed certificate (or a trusted signed certificate trusted) is required. Refer to https://www.thepolyglotdeveloper.com/2018/11/create-self-signed-certificate-nodejs-macos/
+
+to create it and pass the key and cert as options.
