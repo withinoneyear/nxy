@@ -1,6 +1,6 @@
 {
   "name": "nxy",
-  "version": "0.999.1",
+  "version": "0.999.2",
   "type": "module",
   "description": "Proxy for web dev",
   "main": "build/proxy.js",
