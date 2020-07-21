@@ -264,6 +264,17 @@ class SimpleProxy {
     req.pause();
     this.inspector?.onRequest(seq, req, rule?.name);
 
+    if (rule && req.method === "OPTIONS") {
+      req.resume();
+      res.writeHead(204, {
+        "Access-Control-Allow-Headers": "*",
+        "Access-Control-Allow-Methods": "*",
+        "Access-Control-Allow-Origin": "*",
+      });
+      res.end();
+      return;
+    }
+
     Promise.resolve(
       rule?.handler?.onRequest?.({ seq, req, args: rule?.args })
     ).then((rt) => {
@@ -277,6 +288,7 @@ class SimpleProxy {
           rt instanceof RuleResponse ? rt : { body: rt, statusCode: 200 };
         if (response.statusCode == null) response.statusCode = 200;
         if (rt instanceof Error) response.statusCode = 500;
+        res.setHeader("Access-Control-Allow-Origin", "*");
         this.onResponse(seq, res, response as any, handleError);
       }
     });
@@ -321,7 +333,7 @@ class SimpleProxy {
     try {
       res.writeHead(
         response.statusCode ?? 500,
-        response.statusMessage,
+        response.statusMessage ?? "",
         response.headers || {}
       );
       this.inspector?.onRespond(seq, response);

@@ -7,12 +7,12 @@ import chalk from "chalk";
 
 const optionDef = [
   { name: "port", alias: "p", type: Number },
-  { name: "ssl-key", type: String },
-  { name: "ssl-cert", type: String },
+  { name: "ssl-key", alias: "k", type: String },
+  { name: "ssl-cert", alias: "c", type: String },
   { name: "verbose", alias: "v", type: Boolean },
-  { name: "inspector-dir", type: String },
-  { name: "cache-dir", type: String },
-  { name: "clear-cache", type: Boolean },
+  { name: "inspector-dir", alias: "i", type: String },
+  { name: "cache-dir", alias: "C", type: String },
+  { name: "clear-cache", alias: "R", type: Boolean },
   { name: "rule", alias: "r", type: String, multiple: true },
   { name: "rule-file", alias: "f", type: String },
   { name: "output", alias: "o", type: String },

@@ -5,7 +5,7 @@
     "outDir": "./build",
     "declaration": true,
     "strict": true,
-    "sourceMap": false,
+    "sourceMap": true,
     "typeRoots": ["./types"],
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true
